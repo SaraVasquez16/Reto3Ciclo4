@@ -1,11 +1,11 @@
-package com.cuatroa.retotres.repository;
+package com.cuatroa.Reto4.repository;
 
-import com.cuatroa.retotres.model.Fragance;
+import com.cuatroa.Reto4.model.Fragance;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.cuatroa.retotres.repository.crud.FraganceCrudRepository;
+import com.cuatroa.Reto4.repository.crud.FraganceCrudRepository;
 
 /**
  *

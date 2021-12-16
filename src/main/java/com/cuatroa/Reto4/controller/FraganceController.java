@@ -1,7 +1,7 @@
-package com.cuatroa.retotres.controller;
+package com.cuatroa.Reto4.controller;
 
-import com.cuatroa.retotres.model.Fragance;
-import com.cuatroa.retotres.service.FraganceService;
+import com.cuatroa.Reto4.model.Fragance;
+import com.cuatroa.Reto4.service.FraganceService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

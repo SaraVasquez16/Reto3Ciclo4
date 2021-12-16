@@ -1,7 +1,7 @@
-package com.cuatroa.retotres.service;
+package com.cuatroa.Reto4.service;
 
-import com.cuatroa.retotres.model.Fragance;
-import com.cuatroa.retotres.repository.FraganceRepository;
+import com.cuatroa.Reto4.model.Fragance;
+import com.cuatroa.Reto4.repository.FraganceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,13 +30,6 @@ public class FraganceService {
         return fraganceRepository.getFragance(reference);
     }
 
-    // public Fragance save(Fragance fragance) {
-    //     if (fragance.getReference() == null) {
-    //         return fragance;
-    //     } else {
-    //         return fraganceRepository.save(fragance);
-    //     }
-    // }
     public Fragance save(Fragance fragance){
         if (fragance.getReference()==null) {
             return fraganceRepository.save(fragance);

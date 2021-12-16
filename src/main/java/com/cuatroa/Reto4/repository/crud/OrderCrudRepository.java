@@ -1,6 +1,7 @@
-package com.cuatroa.retotres.repository.crud;
+package com.cuatroa.Reto4.repository.crud;
 
-import com.cuatroa.retotres.model.Order;
+import com.cuatroa.Reto4.model.Order;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -15,6 +16,14 @@ public interface OrderCrudRepository extends MongoRepository<Order, Integer> {
     //Retorna las ordenes de pedido que coincidad con la zona recibida como parametro
     @Query("{'salesMan.zone': ?0}")
     List<Order> findByZone(final String zone);
+
+    //Retorna las ordenes de pedido que coincidad con la zona recibida como parametro
+    @Query("{'salesMan._id':?0}")
+    List<Order> findBySalesMan(final Integer id);
+
+    //Retorna las ordenes de pedido que coincidad con la zona recibida como parametro
+    @Query("{status:?0,'salesMan._id':?1}")
+    List<Order> findBySalesManByState(String state, Integer id);
     
     //Retorna las ordenes x estado
     @Query("{status: ?0}")

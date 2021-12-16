@@ -1,6 +1,6 @@
-package com.cuatroa.retotres.repository.crud;
+package com.cuatroa.Reto4.repository.crud;
 
-import com.cuatroa.retotres.model.Fragance;
+import com.cuatroa.Reto4.model.Fragance;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

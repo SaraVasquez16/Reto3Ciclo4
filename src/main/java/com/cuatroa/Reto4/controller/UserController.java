@@ -1,7 +1,7 @@
-package com.cuatroa.retotres.controller;
+package com.cuatroa.Reto4.controller;
 
-import com.cuatroa.retotres.model.Order;
-import com.cuatroa.retotres.service.OrderService;
+import com.cuatroa.Reto4.model.User;
+import com.cuatroa.Reto4.service.UserService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,44 +22,48 @@ import org.springframework.web.bind.annotation.RestController;
  * @author User
  */
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/api/user")
 @CrossOrigin("*")
-public class OrderController {
+public class UserController {
 
     @Autowired
-    private OrderService orderService;
+    private UserService userService;
 
     @GetMapping("/all")
-    public List<Order> getAll() {
-        return orderService.getAll();
+    public List<User> getAll() {
+        return userService.getAll();
     }
-
+    
     @GetMapping("/{id}")
-    public Optional<Order> getOrder(@PathVariable("id") int id) {
-        return orderService.getOrder(id);
+    public Optional <User> getUser(@PathVariable("id") int id) {
+        return userService.getUser(id);
     }
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public Order create(@RequestBody Order gadget) {
-        return orderService.create(gadget);
+    public User create(@RequestBody User user) {
+        return userService.create(user);
     }
-
+    
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Order update(@RequestBody Order gadget) {
-        return orderService.update(gadget);
+    public User update(@RequestBody User user) {
+        return userService.update(user);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id) {
-        return orderService.delete(id);
+        return userService.delete(id);
     }
     
-    //Reto 3:Ordenes de pedido asociadas a los asesores de una zona
-    @GetMapping("/zona/{zona}")
-    public List<Order> findByZone(@PathVariable("zona") String zona) {
-        return orderService.findByZone(zona);
+    @GetMapping("/{email}/{password}")
+    public User authenticateUser(@PathVariable("email") String email, @PathVariable("password") String password) {
+        return userService.authenticateUser(email, password);
+    }
+    
+    @GetMapping("/emailexist/{email}")
+    public boolean emailExists(@PathVariable("email") String email) {
+        return userService.emailExists(email);
     }
 }

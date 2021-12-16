@@ -1,7 +1,7 @@
-package com.cuatroa.retotres.service;
+package com.cuatroa.Reto4.service;
 
-import com.cuatroa.retotres.model.Order;
-import com.cuatroa.retotres.repository.OrderRepository;
+import com.cuatroa.Reto4.model.Order;
+import com.cuatroa.Reto4.repository.OrderRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,12 +78,19 @@ public class OrderService {
     public List<Order> findByZone(String zona) {
         return orderRepository.findByZone(zona);
     }
-//
-//    public List<Order> ordersSalesManByDate(String dateStr, int id) {
-//        return orderRepository.ordersSalesManByDate(dateStr, id);
-//    }
-//    
-//    public List<Order> ordersSalesManByState(String state, Integer id) {
-//        return orderRepository.ordersSalesManByState(state, id);
-//    }
+    
+    //Métodos del reto 4
+    //Ordenes de pedido asociadas a los asesores comerciales o SalesMan
+    public List<Order> findBySalesMan(Integer id) {
+        return orderRepository.findBySalesMan(id);
+    }
+
+    public List<Order> findBySalesManByState(String state, Integer id){
+        return orderRepository.findBySalesManByState(state, id);
+    }
+
+    //Reto 4: Ordenes de un asesor x fecha
+    public List<Order> ordersSalesManByDate(String dateStr, Integer id) {
+        return orderRepository.ordersSalesManByDate(dateStr,id);
+    }
 }

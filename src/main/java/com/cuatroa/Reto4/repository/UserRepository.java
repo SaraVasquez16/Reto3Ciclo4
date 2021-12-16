@@ -1,7 +1,7 @@
-package com.cuatroa.retotres.repository;
+package com.cuatroa.Reto4.repository;
 
-import com.cuatroa.retotres.model.User;
-import com.cuatroa.retotres.repository.crud.UserCrudRepository;
+import com.cuatroa.Reto4.model.User;
+import com.cuatroa.Reto4.repository.crud.UserCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import java.util.List;

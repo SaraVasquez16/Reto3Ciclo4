@@ -1,4 +1,4 @@
-package com.cuatroa.retotres.model;
+package com.cuatroa.Reto4.model;
 
 import java.util.Date;
 import java.util.Map;
