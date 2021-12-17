@@ -113,4 +113,8 @@ public class UserService {
             return usuario.get();
         }
     }
+
+    public List<User> findByMonthBirthDay(String monthBirthtDay) {
+        return userRepository.findByMonthBirthDay(monthBirthtDay);
+    }
 }

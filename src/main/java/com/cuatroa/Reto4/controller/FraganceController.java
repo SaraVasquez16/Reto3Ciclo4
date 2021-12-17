@@ -56,4 +56,16 @@ public class FraganceController {
     public boolean delete(@PathVariable("reference") String reference) {
         return fraganceService.delete(reference);
     }
+
+    //Métodos del reto 5
+    @GetMapping("/description/{description}")
+    public List<Fragance> findByWordinDescription(@PathVariable("description") String description) {
+        return fraganceService.findByWordinDescription(description);
+    }
+
+    @GetMapping("/price/{precio}")
+    public List<Fragance> getProductosByPrecio(@PathVariable("precio") Long precio){
+        return fraganceService.getProductosByPrecio(precio);
+    }
+
 }

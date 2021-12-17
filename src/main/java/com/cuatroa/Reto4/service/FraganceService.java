@@ -93,4 +93,13 @@ public class FraganceService {
         }).orElse(false);
         return aBoolean;
     }
+
+    //Métodos del reto 5
+    public List<Fragance> findByWordinDescription(String description) {
+        return fraganceRepository.findByWordinDescription(description);
+    }
+
+    public List<Fragance> getProductosByPrecio(Long precio) {
+        return fraganceRepository.getProductosByPrecio(precio);
+    }
 }

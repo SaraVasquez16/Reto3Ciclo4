@@ -35,4 +35,13 @@ public class FraganceRepository {
     public void delete(Fragance fragance) {
         fraganceCrudRepository.delete(fragance);
     }
+
+    //Métodos del reto 5      
+    public List<Fragance> findByWordinDescription(String description) {
+        return fraganceCrudRepository.findByWordinDescription(description);
+    }
+
+    public List<Fragance> getProductosByPrecio(Long precio) {
+        return fraganceCrudRepository.getProductosByPrecio(precio);
+    }
 }
